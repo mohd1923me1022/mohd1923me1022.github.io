@@ -1,0 +1,41 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>Transfer Money</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Simple Dynamic Website</h1>
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customers.html">View all Customers</a></li>
+            </ul>
+        </nav>
+    </header>
+
+    <main>
+        <h2>Transfer Money</h2>
+        <form id="transferForm">
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" name="sender" readonly><br>
+
+            <label for="receiver">Receiver:</label>
+            <select id="receiver" name="receiver"></select><br>
+
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" min="0" step="0.01" required><br>
+
+            <input type="submit" value="Transfer">
+        </form>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 Simple Dynamic Website</p>
+    </footer>
+
+    <script src="script.js"></script>
+</body>
+</html>
