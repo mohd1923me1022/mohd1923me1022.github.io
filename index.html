@@ -1,28 +1,289 @@
 <!DOCTYPE html>
 <html>
 <head>
-    <meta charset="UTF-8">
-    <title>Simple Dynamic Website</title>
-    <link rel="stylesheet" href="style.css">
+	<title>TransferEase</title>
+	<meta charset="utf-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0">
+	<style>
+		body {
+			font-family: Arial, sans-serif;
+			background-color: #f4f4f4;
+		}
+
+		.container {
+			max-width: 1200px;
+			margin: 0 auto;
+			padding: 20px;
+			box-sizing: border-box;
+		}
+
+		h1 {
+			text-align: center;
+			margin-top: 0;
+			color: #222;
+		}
+
+		nav {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			margin-bottom: 20px;
+		}
+
+		nav a {
+			color: #fff;
+			text-decoration: none;
+			padding: 10px;
+			margin: 0 5px;
+			border-radius: 5px;
+		}
+
+		nav a:hover {
+			background-color: #fff;
+			color: #333;
+		}
+
+		table {
+			width: 100%;
+			border-collapse: collapse;
+			margin-bottom: 20px;
+		}
+
+		table th, table td {
+			padding: 10px;
+			border: 1px solid #ccc;
+			text-align: left;
+		}
+
+		table th {
+			background-color: #333;
+			color: #fff;
+		}
+
+		form {
+			background-color: #fff;
+			padding: 20px;
+			margin-bottom: 20px;
+		}
+
+		label {
+			display: block;
+			margin-bottom: 10px;
+			color: #333;
+		}
+
+		input[type="text"], input[type="email"], input[type="number"] {
+			display: block;
+			width: 100%;
+			padding: 10px;
+			border: 1px solid #ccc;
+			box-sizing: border-box;
+			border-radius: 5px;
+			margin-bottom: 20px;
+			font-size: 16px;
+			color: #333;
+		}
+
+		input[type="submit"] {
+			background-color: #333;
+			color: #fff;
+			padding: 10px;
+			border: none;
+			border-radius: 5px;
+			cursor: pointer;
+			font-size: 16px;
+		}
+
+		input[type="submit"]:hover {
+			background-color: #fff;
+			color: #333;
+		}
+	</style>
 </head>
 <body>
-    <header>
-        <h1>Simple Dynamic Website</h1>
-        <nav>
-            <ul>
-                <li><a href="index.html">Home</a></li>
-                <li><a href="customers.html">View all Customers</a></li>
-            </ul>
-        </nav>
-    </header>
-
-    <main>
-        <h2>Welcome to our Simple Dynamic Website!</h2>
-        <p>Transfer money between multiple users.</p>
-    </main>
-
-    <footer>
-        <p>&copy; 2023 Simple Dynamic Website</p>
-    </footer>
-</body>
+	<header>
+		<nav>
+			<a href="#">Home</a>
+			<a href="#">View all Customers</a>
+			<a href="#">Select and View one Customer</a>
+			<a href="#">Transfer Money</a>
+			<a href="#">Select customer to transfer to</a>
+			<a href="#">View all Customers</a>
+		</nav>
+	</header>
+	<main>
+		<div class="container">
+			<h1>TransferEase</h1>
+			<p>Welcome to TransferEase, a simple and easy way to transfer money between multiple users.</p>
+			<p>Please select an option from the navigation menu to get started.</p>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Current Balance</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>
+						<td>john@example.com</td>
+						<td>$100.00</td>
+					</tr>
+					<tr>
+						<td>Jane Doe</td>
+						<td>jane@example.com</td>
+						<td>$200.00</td>
+					</tr>
+					<tr>
+						<td>Bob Smith</td>
+						<td>bob@example.com</td>
+						<td>$150.00</td>
+					</tr>
+					<tr>
+						<td>Alice Johnson</td>
+						<td>alice@example.com</td>
+						<td>$300.00</td>
+					</tr>
+					<tr>
+						<td>Tom Wilson</td>
+						<td>tom@example.com</td>
+						<td>$75.00</td>
+					</tr>
+					<tr>
+						<td>Sara Lee</td>
+						<td>sara@example.com</td>
+						<td>$250.00</td>
+					</tr>
+					<tr>
+						<td>Mark Davis</td>
+						<td>mark@example.com</td>
+						<td>$175.00</td>
+					</tr>
+					<tr>
+						<td>Emily Green</td>
+						<td>emily@example.com</td>
+						<td>$225.00</td>
+					</tr>
+					<tr>
+						<td>David Kim</td>
+						<td>david@example.com</td>
+						<td>$125.00</td>
+					</tr>
+					<tr>
+						<td>Lisa Chen</td>
+						<td>lisa@example.com</td>
+						<td>$275.00</td>
+					</tr>
+				</tbody>
+			</table>
+			<form>
+				<label for="name">Name:</label>
+				<input type="text" id="name" name="name" required>
+				<label for="email">Email:</label>
+				<input type="email" id="email" name="email" required>
+				<label for="balance">Current Balance:</label>
+				<input type="number" id="balance" name="balance" required>
+				<input type="submit" value="Add Customer">
+			</form>
+			<form>
+				<label for="from">Transfer From:</label>
+				<select id="from" name="from" required>
+					<option value="">Select a customer</option>
+					<option value="john@example.com">John Doe</option>
+					<option value="jane@example.com">Jane Doe</option>
+					<option value="bob@example.com">Bob Smith</option>
+					<option value="alice@example.com">Alice Johnson</option>
+					<option value="tom@example.com">Tom Wilson</option>
+					<option value="sara@example.com">Sara Lee</option>
+					<option value="mark@example.com">Mark Davis</option>
+					<option value="emily@example.com">Emily Green</option>
+					<option value="david@example.com">David Kim</option>
+					<option value="lisa@example.com">Lisa Chen</option>
+				</select>
+				<label for="to">Transfer To:</label>
+				<select id="to" name="to" required>
+					<option value="">Select a customer</option>
+					<option value="john@example.com">John Doe</option>
+					<option value="jane@example.com">Jane Doe</option>
+					<option value="bob@example.com">Bob Smith
+</option>
+					<option value="alice@example.com">Alice Johnson</option>
+					<option value="tom@example.com">Tom Wilson</option>
+					<option value="sara@example.com">Sara Lee</option>
+					<option value="mark@example.com">Mark Davis</option>
+					<option value="emily@example.com">Emily Green</option>
+					<option value="david@example.com">David Kim</option>
+					<option value="lisa@example.com">Lisa Chen</option>
+				</select>
+				<label for="amount">Amount:</label>
+				<input type="number" id="amount" name="amount" required>
+				<input type="submit" value="Transfer">
+			</form>
+			<table>
+				<thead>
+					<tr>
+						<th>Name</th>
+						<th>Email</th>
+						<th>Current Balance</th>
+					</tr>
+				</thead>
+				<tbody>
+					<tr>
+						<td>John Doe</td>
+						<td>john@example.com</td>
+						<td>$100.00</td>
+					</tr>
+					<tr>
+						<td>Jane Doe</td>
+						<td>jane@example.com</td>
+						<td>$200.00</td>
+					</tr>
+					<tr>
+						<td>Bob Smith</td>
+						<td>bob@example.com</td>
+						<td>$150.00</td>
+					</tr>
+					<tr>
+						<td>Alice Johnson</td>
+						<td>alice@example.com</td>
+						<td>$300.00</td>
+					</tr>
+					<tr>
+						<td>Tom Wilson</td>
+						<td>tom@example.com</td>
+						<td>$75.00</td>
+					</tr>
+					<tr>
+						<td>Sara Lee</td>
+						<td>sara@example.com</td>
+						<td>$250.00</td>
+					</tr>
+					<tr>
+						<td>Mark Davis</td>
+						<td>mark@example.com</td>
+						<td>$175.00</td>
+					</tr>
+					<tr>
+						<td>Emily Green</td>
+						<td>emily@example.com</td>
+						<td>$225.00</td>
+					</tr>
+					<tr>
+						<td>David Kim</td>
+						<td>david@example.com</td>
+						<td>$125.00</td>
+					</tr>
+					<tr>
+						<td>Lisa Chen</td>
+						<td>lisa@example.com</td>
+						<td>$275.00</td>
+					</tr>
+				</tbody>
+			</table>
+		</div>
+		<footer>
+			<p>&copy; 2023 TransferEase</p>
+		</footer>
+	</body>
 </html>
