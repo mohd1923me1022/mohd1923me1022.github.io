@@ -1,92 +1,28 @@
 <!DOCTYPE html>
-<html lang="en">
+<html>
 <head>
-	<meta charset="UTF-8">
-	<title>TransferEase</title>
-	<link rel="stylesheet" href="styles.css">
+	<title>TransferEase - Home</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
 </head>
 <body>
 	<header>
-		<div>
+		<div class="logo">
 			<h1>TransferEase</h1>
 		</div>
 		<nav>
 			<ul>
-				<li><a href="#">Home</a></li>
-				<li><a href="#customers">View all Customers</a></li>
+				<li><a href="index.html">Home</a></li>
+				<li><a href="customers.html">View all Customers</a></li>
+				<li><a href="transfer.html">Transfer Money</a></li>
 			</ul>
 		</nav>
 	</header>
-
 	<main>
-		<section id="home">
-			<h2>Welcome to TransferEase</h2>
-			<p>Transfer money between multiple customers with ease.</p>
-			<a href="#customers"><button>View all Customers</button></a>
-		</section>
-
-		<section id="customers">
-			<h2>All Customers</h2>
-			<table>
-				<thead>
-					<tr>
-						<th>Customer ID</th>
-						<th>Name</th>
-						<th>Email</th>
-						<th>Current Balance</th>
-						<th>Transfer Money</th>
-					</tr>
-				</thead>
-				<tbody id="customersTableBody">
-					<!-- Customer data will be displayed here dynamically using JavaScript -->
-				</tbody>
-			</table>
-		</section>
-
-		<section id="viewCustomer" style="display: none;">
-			<h2>View Customer</h2>
-			<div>
-				<label for="customerId">Select Customer:</label>
-				<select id="customerId" onchange="viewCustomer()">
-					<option value="">-- Select a Customer --</option>
-					<!-- Customer options will be added here dynamically using JavaScript -->
-				</select>
-			</div>
-			<div id="customerDetails" style="display: none;">
-				<h3 id="customerName"></h3>
-				<p><strong>Email:</strong> <span id="customerEmail"></span></p>
-				<p><strong>Current Balance:</strong> <span id="customerBalance"></span></p>
-				<a href="#transferMoney"><button>Transfer Money</button></a>
-			</div>
-		</section>
-
-		<section id="transferMoney" style="display: none;">
-			<h2>Transfer Money</h2>
-			<div>
-				<label for="fromCustomer">From:</label>
-				<span id="fromCustomerName"></span>
-			</div>
-			<div>
-				<label for="toCustomer">To:</label>
-				<select id="toCustomer">
-					<option value="">-- Select a Customer --</option>
-					<!-- Customer options will be added here dynamically using JavaScript -->
-				</select>
-			</div>
-			<div>
-				<label for="amount">Amount:</label>
-				<input type="number" id="amount" min="1" max="" required>
-			</div>
-			<div>
-				<button onclick="transferMoney()">Transfer</button>
-			</div>
-		</section>
+		<h1>Welcome to TransferEase</h1>
+		<p>TransferEase is a simple and secure way to transfer money between multiple users. Click on the links in the navigation bar to get started.</p>
 	</main>
-
 	<footer>
-		<p>&copy; 2023 TransferEase</p>
+		<p>&copy; 2023 TransferEase. All rights reserved.</p>
 	</footer>
-
-	<script src="script.js"></script>
 </body>
 </html>
