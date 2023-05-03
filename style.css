@@ -3,6 +3,7 @@ body {
 	font-family: Arial, sans-serif;
 	margin: 0;
 	padding: 0;
+	background-color: #f2f2f2;
 }
 
 /* Header styles */
@@ -40,6 +41,9 @@ header nav ul li a {
 /* Main content styles */
 main {
 	margin: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
 }
 
 section {
@@ -76,6 +80,7 @@ button {
 	border: none;
 	padding: 10px;
 	cursor: pointer;
+	border-radius: 5px;
 }
 
 /* Footer styles */
