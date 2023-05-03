@@ -1,17 +1,19 @@
 <!DOCTYPE html>
-<html>
+<html lang="en">
 <head>
+	<meta charset="UTF-8">
 	<title>TransferEase</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
+	<link rel="stylesheet" href="styles.css">
 </head>
 <body>
 	<header>
-		<h1>TransferEase</h1>
+		<div>
+			<h1>TransferEase</h1>
+		</div>
 		<nav>
 			<ul>
-				<li><a href="#home">Home</a></li>
+				<li><a href="#">Home</a></li>
 				<li><a href="#customers">View all Customers</a></li>
-				<li><a href="#transfer">Transfer Money</a></li>
 			</ul>
 		</nav>
 	</header>
@@ -19,88 +21,72 @@
 	<main>
 		<section id="home">
 			<h2>Welcome to TransferEase</h2>
-			<p>TransferEase is a simple and easy-to-use platform for transferring money between multiple customers.</p>
-			<p>Click on the links in the navigation bar to get started.</p>
+			<p>Transfer money between multiple customers with ease.</p>
+			<a href="#customers"><button>View all Customers</button></a>
 		</section>
 
 		<section id="customers">
-			<h2>View all Customers</h2>
+			<h2>All Customers</h2>
 			<table>
 				<thead>
 					<tr>
+						<th>Customer ID</th>
 						<th>Name</th>
 						<th>Email</th>
 						<th>Current Balance</th>
-						<th></th>
+						<th>Transfer Money</th>
 					</tr>
 				</thead>
-				<tbody>
-					<tr>
-						<td>John Doe</td>
-						<td>john.doe@example.com</td>
-						<td>$1000.00</td>
-						<td><button>Select</button></td>
-					</tr>
-					<tr>
-						<td>Jane Smith</td>
-						<td>jane.smith@example.com</td>
-						<td>$5000.00</td>
-						<td><button>Select</button></td>
-					</tr>
-					<!-- more customer rows -->
+				<tbody id="customersTableBody">
+					<!-- Customer data will be displayed here dynamically using JavaScript -->
 				</tbody>
 			</table>
 		</section>
 
-		<section id="select-customer">
-			<h2>Select a Customer</h2>
-			<form>
-				<label for="customer">Select a customer:</label>
-				<select id="customer">
-					<option value="john-doe">John Doe</option>
-					<option value="jane-smith">Jane Smith</option>
-					<!-- more customer options -->
-				</select>
-				<button type="submit">View Customer</button>
-			</form>
-		</section>
-
-		<section id="customer-details">
-			<h2>Customer Details</h2>
+		<section id="viewCustomer" style="display: none;">
+			<h2>View Customer</h2>
 			<div>
-				<h3>John Doe</h3>
-				<p>Email: john.doe@example.com</p>
-				<p>Current Balance: $1000.00</p>
+				<label for="customerId">Select Customer:</label>
+				<select id="customerId" onchange="viewCustomer()">
+					<option value="">-- Select a Customer --</option>
+					<!-- Customer options will be added here dynamically using JavaScript -->
+				</select>
 			</div>
-			<button>Transfer Money</button>
+			<div id="customerDetails" style="display: none;">
+				<h3 id="customerName"></h3>
+				<p><strong>Email:</strong> <span id="customerEmail"></span></p>
+				<p><strong>Current Balance:</strong> <span id="customerBalance"></span></p>
+				<a href="#transferMoney"><button>Transfer Money</button></a>
+			</div>
 		</section>
 
-		<section id="transfer">
+		<section id="transferMoney" style="display: none;">
 			<h2>Transfer Money</h2>
-			<form>
-				<label for="sender">Sender:</label>
-				<select id="sender">
-					<option value="john-doe">John Doe</option>
-					<option value="jane-smith">Jane Smith</option>
-					<!-- more customer options -->
+			<div>
+				<label for="fromCustomer">From:</label>
+				<span id="fromCustomerName"></span>
+			</div>
+			<div>
+				<label for="toCustomer">To:</label>
+				<select id="toCustomer">
+					<option value="">-- Select a Customer --</option>
+					<!-- Customer options will be added here dynamically using JavaScript -->
 				</select>
-				<label for="recipient">Recipient:</label>
-				<select id="recipient">
-					<option value="john-doe">John Doe</option>
-					<option value="jane-smith">Jane Smith</option>
-					<!-- more customer options -->
-				</select>
+			</div>
+			<div>
 				<label for="amount">Amount:</label>
-				<input type="text" name="amount" id="amount" placeholder="Enter Amount">
-			<button type="submit">Transfer</button>
-		</form>
-	</section>
-</main>
+				<input type="number" id="amount" min="1" max="" required>
+			</div>
+			<div>
+				<button onclick="transferMoney()">Transfer</button>
+			</div>
+		</section>
+	</main>
 
-<footer>
-	<p>&copy; 2023 TransferEase. All rights reserved.</p>
-</footer>
+	<footer>
+		<p>&copy; 2023 TransferEase</p>
+	</footer>
 
-<script src="script.js"></script>
+	<script src="script.js"></script>
 </body>
 </html>
