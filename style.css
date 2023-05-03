@@ -36,18 +36,21 @@ header nav ul li a {
 	color: #fff;
 	text-decoration: none;
 	padding: 5px;
+	background-color: #4CAF50;
+	border-radius: 5px;
 }
 
 /* Main content styles */
 main {
 	margin: 20px;
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
 }
 
 section {
 	margin-bottom: 20px;
+	background-color: #fff;
+	padding: 20px;
+	border-radius: 5px;
+	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
 }
 
 section h2 {
@@ -75,7 +78,7 @@ table tr:nth-child(even) {
 }
 
 button {
-	background-color: #2196F3;
+	background-color: #4CAF50;
 	color: #fff;
 	border: none;
 	padding: 10px;
