@@ -1,42 +1,30 @@
-// Function to show the customer details for a selected customer
-function showCustomerDetails() {
-  const selectElement = document.querySelector("#customer");
-  const selectedValue = selectElement.value;
-  const customerDetailsSection = document.querySelector("#customer-details");
-  const customerName = customerDetailsSection.querySelector("h3");
-  const customerEmail = customerDetailsSection.querySelector("p:first-of-type");
-  const customerBalance = customerDetailsSection.querySelector("p:last-of-type");
-  customerName.textContent = selectedValue;
-  customerEmail.textContent = "Email: " + selectedValue.replace("-", ".") + "@example.com";
-  customerBalance.textContent = "Current Balance: $1000.00";
-  customerDetailsSection.style.display = "block";
-}
+// Get the table body element
+const tableBody = document.querySelector('#customer-table tbody');
 
-// Function to show the transfer form for a selected customer
-function showTransferForm() {
-  const selectElement = document.querySelector("#sender");
-  const selectedValue = selectElement.value;
-  const transferSection = document.querySelector("#transfer");
-  const senderLabel = transferSection.querySelector("label[for=sender]");
-  senderLabel.textContent = "Sender: " + selectedValue;
-  transferSection.style.display = "block";
-}
+// Fetch the customer data from the server
+fetch('http://localhost:8080/customers')
+  .then(response => response.json())
+  .then(customers => {
+    // Loop through each customer and add a table row with their data
+    customers.forEach(customer => {
+      const row = tableBody.insertRow();
 
-// Attach event listeners to the customer selection form and transfer form
-const selectCustomerForm = document.querySelector("#select-customer form");
-selectCustomerForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  showCustomerDetails();
-});
+      const nameCell = row.insertCell();
+      nameCell.textContent = customer.name;
 
-const customerDetailsSection = document.querySelector("#customer-details");
-const transferButton = customerDetailsSection.querySelector("button");
-transferButton.addEventListener("click", function () {
-  showTransferForm();
-});
+      const emailCell = row.insertCell();
+      emailCell.textContent = customer.email;
 
-const transferForm = document.querySelector("#transfer form");
-transferForm.addEventListener("submit", function (event) {
-  event.preventDefault();
-  alert("Transfer successful!");
-});
+      const balanceCell = row.insertCell();
+      balanceCell.textContent = customer.balance;
+
+      const viewCell = row.insertCell();
+      const viewLink = document.createElement('a');
+      viewLink.textContent = 'View';
+      viewLink.href = `customer.html?id=${customer.id}`;
+      viewCell.appendChild(viewLink);
+    });
+  })
+  .catch(error => {
+    console.error('Error fetching customers:', error);
+  });
