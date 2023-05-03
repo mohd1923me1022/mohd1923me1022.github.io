@@ -93,3 +93,27 @@ footer {
 	text-align: center;
 	padding: 10px;
 }
+form label {
+  display: block;
+  margin-bottom: 5px;
+}
+
+form input,
+form select {
+  border: 2px solid #2196F3;
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1em;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+form button[type="submit"] {
+  background-color: #2196F3;
+  color: #fff;
+  border: none;
+  padding: 10px 20px;
+  cursor: pointer;
+  border-radius: 5px;
+  font-size: 1em;
+  transition: background
