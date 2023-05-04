@@ -1,3 +1,37 @@
-<a href="#" id="view-customers-btn">View All Customers</a>
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TransferEase - View All Customers</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="container">
+		<h1>TransferEase - View All Customers</h1>
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Current Balance</th>
+				<th>Action</th>
+			</tr>
+			<?php
+				// Connect to the database
+				$conn = mysqli_connect("localhost", "username", "password", "database_name");
 
-<div id="customers-container"></div>
+				// Check if the connection was successful
+				if (!$conn) {
+					die("Connection failed: " . mysqli_connect_error());
+				}
+
+				// Fetch data from the Customers table
+				$sql = "SELECT * FROM Customers";
+				$result = mysqli_query($conn, $sql);
+
+				// Loop through the data and display it in a table
+				if (mysqli_num_rows($result) > 0) {
+					while ($row = mysqli_fetch_assoc($result)) {
+						echo "<tr>";
+						echo "<td>" . $row["name"] . "</td>";
+						echo "<td>" . $row["email"] . "</td>";
+						echo "<td>" . $row["balance"] . "</td>";
+						echo "<td><a href='view-customer.php
