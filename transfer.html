@@ -1,0 +1,34 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TransferEase - Transfer Money</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="TransferEase Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customers.html">View all Customers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Transfer Money</h1>
+        <form>
+            <label for="sender">Sender:</label>
+            <input type="text" id="sender" name="sender" value="" readonly>
+            <label for="recipient">Recipient:</label>
+            <select id="recipient" name="recipient">
+                <!-- JavaScript will populate this select element -->
+            </select>
+            <label for="amount">Amount:</label>
+            <input type="number" id="amount" name="amount" min="0" step="0.01" required>
+            <button type="submit">Transfer</button>
+        </form>
+    </main>
+    <script src="transfer.js"></script>
+</body>
+</html>
