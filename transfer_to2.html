@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <title>TransferEase - Select customer to transfer to</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <nav>
+        <div class="logo">
+            <h1>TransferEase</h1>
+        </div>
+        <ul class="nav-links">
+            <li><a href="index.html">Home</a></li>
+            <li><a href="customers.html">View all Customers</a></li>
+        </ul>
+    </nav>
+
+    <h2>Select customer to transfer to:</h2>
+    <table>
+        <tr>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Current Balance</th>
+            <th>Select</th>
+        </tr>
+        <?php
+        // Connect to MySQL database
+        $conn = mysqli_connect("localhost", "root", "", "transfer_ease");
+
+        // Check connection
+        if (!$conn) {
+            die("Connection failed: " . mysqli_connect_error());
+        }
+
+        // Get all customers from the Customers table
+        $sql = "SELECT * FROM Customers";
+        $result = mysqli_query($conn, $sql);
+
+        // Display each customer's details in a table row
+        if (mysqli_num_rows($result) > 0) {
+            while($row = mysqli_fetch_assoc($result)) {
+                echo "<tr><td>" . $row["name"] . "</td><td>" . $row["email"] . "</td><td>$" . number_format($row["balance"], 2) . "</td><td><a href='transfer.php?receiver_id=" . $row["id"] . "'>Select</a></td></tr>";
+            }
+        } else {
+            echo "<tr><td colspan='4'>No customers found</td></tr>";
+        }
+
+        mysqli_close($conn);
+        ?>
+    </table>
+</body>
+</html>
