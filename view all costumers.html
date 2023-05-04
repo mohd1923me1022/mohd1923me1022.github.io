@@ -1,37 +1,35 @@
 <!DOCTYPE html>
 <html>
-<head>
-	<title>TransferEase - View All Customers</title>
-	<link rel="stylesheet" type="text/css" href="style.css">
-</head>
-<body>
-	<div class="container">
-		<h1>TransferEase - View All Customers</h1>
-		<table>
-			<tr>
-				<th>Name</th>
-				<th>Email</th>
-				<th>Current Balance</th>
-				<th>Action</th>
-			</tr>
-			<?php
-				// Connect to the database
-				$conn = mysqli_connect("localhost", "username", "password", "database_name");
-
-				// Check if the connection was successful
-				if (!$conn) {
-					die("Connection failed: " . mysqli_connect_error());
-				}
-
-				// Fetch data from the Customers table
-				$sql = "SELECT * FROM Customers";
-				$result = mysqli_query($conn, $sql);
-
-				// Loop through the data and display it in a table
-				if (mysqli_num_rows($result) > 0) {
-					while ($row = mysqli_fetch_assoc($result)) {
-						echo "<tr>";
-						echo "<td>" . $row["name"] . "</td>";
-						echo "<td>" . $row["email"] . "</td>";
-						echo "<td>" . $row["balance"] . "</td>";
-						echo "<td><a href='view-customer.php
+  <head>
+    <meta charset="utf-8">
+    <title>TransferEase - View all Customers</title>
+    <link rel="stylesheet" href="style.css">
+  </head>
+  <body>
+    <header>
+      <h1>TransferEase</h1>
+      <nav>
+        <ul>
+          <li><a href="index.html">Home</a></li>
+          <li><a href="view-customers.html">View all Customers</a></li>
+        </ul>
+      </nav>
+    </header>
+    <main>
+      <h2>All Customers</h2>
+      <table>
+        <thead>
+          <tr>
+            <th>ID</th>
+            <th>Name</th>
+            <th>Email</th>
+            <th>Current Balance</th>
+          </tr>
+        </thead>
+        <tbody id="customer-table">
+        </tbody>
+      </table>
+    </main>
+    <script src="app.js"></script>
+  </body>
+</html>
