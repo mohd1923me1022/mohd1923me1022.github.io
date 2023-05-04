@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>TransferEase - Customers</title>
+	<link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+	<div class="header">
+		<h2>All Customers</h2>
+	</div>
+	<div class="container">
+		<table>
+			<tr>
+				<th>Name</th>
+				<th>Email</th>
+				<th>Balance</th>
+			</tr>
+			<!-- loop through all customers to create a row for each -->
+			<?php
+				require_once('db.php');
+				$query = "SELECT * FROM Customers";
+				$result = mysqli_query($conn, $query);
+				if(mysqli_num_rows($result) > 0){
+					while($row = mysqli_fetch_assoc($result)){
+						echo "<tr>";
+						echo "<td>".$row['name']."</td>";
+						echo "<td>".$row['email']."</td>";
+						echo "<td>".$row['balance']."</td>";
+						echo "</tr>";
+					}
+				}
+			?>
+		</table>
+	</div>
+</body>
+</html>
