@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="UTF-8">
+    <title>TransferEase - Customer Details</title>
+    <link rel="stylesheet" type="text/css" href="style.css">
+</head>
+<body>
+    <header>
+        <img src="logo.png" alt="TransferEase Logo">
+        <nav>
+            <ul>
+                <li><a href="index.html">Home</a></li>
+                <li><a href="customers.html">View all Customers</a></li>
+            </ul>
+        </nav>
+    </header>
+    <main>
+        <h1>Customer Details</h1>
+        <table>
+            <tr>
+                <td>Name:</td>
+                <td id="customer-name"></td>
+            </tr>
+            <tr>
+                <td>Email:</td>
+                <td id="customer-email"></td>
+            </tr>
+            <tr>
+                <td>Current Balance:</td>
+                <td id="customer-balance"></td>
+            </tr>
+        </table>
+        <button onclick="location.href='transfer.html'">Transfer Money</button>
+    </main>
+    <script src="customer.js"></script>
+</body>
+</html>
