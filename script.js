@@ -1,30 +1,25 @@
-// Get the table body element
-const tableBody = document.querySelector('#customer-table tbody');
+// view all costumers
+const customerTable = document.getElementById('customer-table');
 
-// Fetch the customer data from the server
-fetch('http://localhost:8080/customers')
-  .then(response => response.json())
-  .then(customers => {
-    // Loop through each customer and add a table row with their data
-    customers.forEach(customer => {
-      const row = tableBody.insertRow();
+// Function to fetch all customers from server
+function fetchAllCustomers() {
+  fetch('/api/customers')
+    .then(response => response.json())
+    .then(customers => {
+      // Create HTML table rows for each customer
+      const rows = customers.map(customer => {
+        return `<tr>
+                  <td>${customer.id}</td>
+                  <td>${customer.name}</td>
+                  <td>${customer.email}</td>
+                  <td>$${customer.balance.toFixed(2)}</td>
+                </tr>`;
+      });
+      // Append rows to the table body
+      customerTable.innerHTML = rows.join('');
+    })
+    .catch(error => console.error(error));
+}
 
-      const nameCell = row.insertCell();
-      nameCell.textContent = customer.name;
-
-      const emailCell = row.insertCell();
-      emailCell.textContent = customer.email;
-
-      const balanceCell = row.insertCell();
-      balanceCell.textContent = customer.balance;
-
-      const viewCell = row.insertCell();
-      const viewLink = document.createElement('a');
-      viewLink.textContent = 'View';
-      viewLink.href = `customer.html?id=${customer.id}`;
-      viewCell.appendChild(viewLink);
-    });
-  })
-  .catch(error => {
-    console.error('Error fetching customers:', error);
-  });
+// Call fetchAllCustomers function when page loads
+window.addEventListener('load', fetchAllCustomers);
