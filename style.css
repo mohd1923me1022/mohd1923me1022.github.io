@@ -1,119 +1,97 @@
-/* Global styles */
-body {
-	font-family: Arial, sans-serif;
-	margin: 0;
-	padding: 0;
-	background-color: #f2f2f2;
-}
-
-/* Header styles */
-header {
-	background-color: #2196F3;
-	color: #fff;
-	padding: 10px;
-	display: flex;
-	justify-content: space-between;
-	align-items: center;
-}
-
-header h1 {
-	margin: 0;
-	font-size: 2em;
-}
-
-header nav ul {
-	list-style: none;
-	margin: 0;
-	padding: 0;
-	display: flex;
-}
-
-header nav ul li {
-	margin-right: 10px;
-}
-
-header nav ul li a {
-	color: #fff;
-	text-decoration: none;
-	padding: 5px;
-	background-color: #4CAF50;
-	border-radius: 5px;
-}
-
-/* Main content styles */
-main {
-	margin: 20px;
-}
-
-section {
-	margin-bottom: 20px;
-	background-color: #fff;
-	padding: 20px;
-	border-radius: 5px;
-	box-shadow: 0 0 5px rgba(0, 0, 0, 0.2);
-}
-
-section h2 {
-	margin-top: 0;
-}
-
-table {
-	border-collapse: collapse;
-	width: 100%;
-}
-
-table th,
-table td {
-	padding: 10px;
-	text-align: left;
-}
-
-table th {
-	background-color: #2196F3;
-	color: #fff;
-}
-
-table tr:nth-child(even) {
-	background-color: #f2f2f2;
-}
-
-button {
-	background-color: #4CAF50;
-	color: #fff;
-	border: none;
-	padding: 10px;
-	cursor: pointer;
-	border-radius: 5px;
-}
-
-/* Footer styles */
-footer {
-	background-color: #ccc;
-	color: #333;
+ /*Home page*/
+.container {
+	max-width: 800px;
+	margin: 0 auto;
+	padding: 50px 20px;
 	text-align: center;
-	padding: 10px;
-}
-form label {
-  display: block;
-  margin-bottom: 5px;
 }
 
-form input,
-form select {
-  border: 2px solid #2196F3;
-  border-radius: 5px;
-  padding: 10px;
-  font-size: 1em;
-  width: 100%;
+h1 {
+	font-size: 48px;
+	font-weight: bold;
+	margin-bottom: 20px;
+}
+
+p {
+	font-size: 24px;
+	margin-bottom: 30px;
+}
+
+.button {
+	display: inline-block;
+	padding: 12px 20px;
+	background-color: #2196F3;
+	color: #fff;
+	font-size: 24px;
+	text-decoration: none;
+	border-radius: 4px;
+	transition: background-color 0.3s ease;
+}
+
+.button:hover {
+	background-color: #0D47A1;
+}
+ /*View all costumers*/
+* {
+  margin: 0;
+  padding: 0;
   box-sizing: border-box;
 }
 
-form button[type="submit"] {
-  background-color: #2196F3;
+body {
+  font-family: Arial, sans-serif;
+  font-size: 16px;
+  line-height: 1.5;
+}
+
+header {
+  background-color: #333;
   color: #fff;
-  border: none;
-  padding: 10px 20px;
-  cursor: pointer;
-  border-radius: 5px;
-  font-size: 1em;
-  transition: background
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding: 1rem;
+}
+
+nav ul {
+  display: flex;
+  list-style: none;
+}
+
+nav li {
+  margin-left: 1rem;
+}
+
+nav a {
+  color: #fff;
+  text-decoration: none;
+}
+
+main {
+  margin: 2rem auto;
+  max-width: 800px;
+  padding: 0 1rem;
+}
+
+h2 {
+  margin-bottom: 1rem;
+}
+
+table {
+  border-collapse: collapse;
+  width: 100%;
+}
+
+th, td {
+  text-align: left;
+  padding: 0.5rem;
+}
+
+th {
+  background-color: #333;
+  color: #fff;
+}
+
+tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
